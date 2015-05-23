@@ -4,7 +4,7 @@
 ############################################################
 
 # Set the base image to Ubuntu
-FROM centos:centos6
+FROM centos:latest
 
 # File Author / Maintainer
 MAINTAINER Kaushal Kishore <kaushal.rahuljaiswal@gmail.com>
@@ -16,7 +16,7 @@ ADD nginx.repo /etc/yum.repos.d/nginx.repo
 RUN yum -y install nginx
 
 # Installing MySQL
-RUN yum -y install mysql-server mysql-client
+RUN yum -y install mariadb-server mariadb-client
 
 # Installing PHP
 RUN yum -y --enablerepo=remi,remi-php56 install nginx php-fpm php-common
