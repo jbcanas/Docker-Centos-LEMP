@@ -45,7 +45,7 @@ ADD run.sh /run.sh
 RUN chmod 755 /*.sh
 
 #Starting MySQL Service
-RUN /etc/init.d/mysqld start
+RUN sudo systemctl start mariadb.service
 
 # Adding the configuration file of the Supervisor
 ADD supervisord.conf /etc/
